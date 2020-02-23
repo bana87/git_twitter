@@ -1,3 +1,61 @@
-// Place all the styles related to the tweets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body, html {
+  font-family: 'sans-serif','serif';
+  background-color: white;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+header {
+  height: 46px;
+}
+
+.contents {
+  width: 100%;
+}
+
+.tweetcontents {
+  width: 30%;
+  display: flex;
+  margin:0 auto;
+  border: solid #d8d2c5;
+}
+.userimage {
+  margin: 5px;
+}
+
+.nametext{
+  text-align: left;
+}
+
+.btn {
+  
+}
+
+.btn1 {
+  width: 100px;
+  padding: 5px;
+  margin: 10px;
+  background-color: #26bfbf;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.inputarea {
+  width: 200px;
+  margin: 10px;
+}
+
+.inputarea input[type=text]{
+  display: block;
+  width: 150px;
+  padding: 5px;
+  margin: 10px;
+}

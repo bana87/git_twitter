@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>ついったー</title>
+  </head>
+  <body>
+    <header>
+      <h1>ついったー</h1>
+    </header>
+    <button type="button" class="btn1"><a href="tweets/new">投稿する！</a></button>
+    <div class="contents">
+      <% @tweets.each do|tweet| %>
+      <div class="tweetcontents">
+        <div class="userimage">
+          <%= image_tag 'psyduck.jpeg', :size =>'80x80' %>
+        </div>
+        <div class="nametext">
+          <p class="username">
+            <%= tweet.name %>
+          </p>
+          <p class="text">
+            <%= tweet.text %>
+          </p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </body>
+</html>
