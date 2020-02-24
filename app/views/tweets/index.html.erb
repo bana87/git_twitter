@@ -6,9 +6,9 @@
     </div>
     <div class="tweet_text">
       <div class="tweet_header">
-        <p class="username">
+        <div class="username">
           <%= tweet.user.nickname %>
-        </p>
+        </div>
         <% if user_signed_in? && current_user.id == tweet.user_id %>
         <div class="arrow">
           <label for="label1"><%= image_tag 'arrow.png' %></label>
@@ -20,7 +20,6 @@
           </div>
         </div>
         <% end %>
-      </div>
       </div>
       <p class="text">
         <%= tweet.text %>
