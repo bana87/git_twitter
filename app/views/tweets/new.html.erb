@@ -1,5 +1,6 @@
 <div class="contents">
   <h2>投稿する</h2>
+  <p>あなたは<%= current_user.nickname %>さんですね！</p>
   <%= form_tag('/tweets',method: :post) do %>
     <div class="inputarea">
       <input type="text" name="text" placeholder="つぶやきを入力しよう">
