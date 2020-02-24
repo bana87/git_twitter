@@ -4,10 +4,24 @@
     <div class="userimage">
       <%= image_tag 'psyduck.jpeg', :size =>'80x80' %>
     </div>
-    <div class="nametext">
-      <p class="username">
-        <%= tweet.user.nickname %>
-      </p>
+    <div class="tweet_text">
+      <div class="tweet_header">
+        <p class="username">
+          <%= tweet.user.nickname %>
+        </p>
+        <% if user_signed_in? && current_user.id == tweet.user_id %>
+        <div class="arrow">
+          <label for="label1"><%= image_tag 'arrow.png' %></label>
+          <input type="checkbox" id="label1" class="check">
+          <div class="more">
+          <!--ここから隠す-->
+            <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+          <!--ここまで隠す-->
+          </div>
+        </div>
+        <% end %>
+      </div>
+      </div>
       <p class="text">
         <%= tweet.text %>
       </p>
