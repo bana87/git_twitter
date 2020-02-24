@@ -8,7 +8,7 @@ a {
   text-decoration: none;
 }
 
-h1 {
+h1, h2 {
   font-size: 20px;
 }
 
@@ -39,10 +39,20 @@ header {
 }
 
 .btn1 {
-  width: 100px;
+  width: 120px;
   padding: 5px;
   margin: 10px;
   background-color: #26bfbf;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btn2 {
+  width: 100px;
+  padding: 5px;
+  margin: 10px;
+  background-color: #d8d2c5;
   color: white;
   border-radius: 4px;
   font-size: 14px;
