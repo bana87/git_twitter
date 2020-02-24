@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get  '/tweets' => 'tweets#index'
   get  '/tweets/new' => 'tweets#new'
   post  '/tweets' => 'tweets#create'
-  delete '/tweet/:id' => 'tweets#destroy'
+  delete '/tweets/:id' => 'tweets#destroy'
 end
