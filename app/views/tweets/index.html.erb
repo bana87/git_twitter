@@ -1,4 +1,5 @@
 <div class="contents">
+  <% if user_signed_in? %>
   <div class="post">
     <%= form_tag('/tweets',method: :post) do %>
       <div class="inputarea">
@@ -9,6 +10,9 @@
       </div>
     <% end %>
   </div>
+  <% else %>
+    <p>新規登録／ログインするとツイートできるようになるよ！</p>
+  <% end %>
   <% @tweets.each do|tweet| %>
   <div class="tweetcontents">
     <div class="userimage">
