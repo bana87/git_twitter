@@ -26,6 +26,11 @@
       <%= f.label :'パスワード(確認用)' %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
+    
+    <div class="field">
+      <%= f.label :'画像のURL' %><br />
+      <%= f.text_field :image %>
+    </div>
   
     <div class="actions">
       <%= f.submit "登録する" %>
