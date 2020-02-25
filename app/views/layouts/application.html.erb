@@ -16,7 +16,6 @@
       <div class="user-info">
         <% if user_signed_in? %>
           <p>ユーザー名：<%= current_user.nickname %></p>
-          <a href="/tweets/new">投稿する</a></li>
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
           </ul>
         <% else %>

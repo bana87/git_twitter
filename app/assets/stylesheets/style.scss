@@ -19,17 +19,15 @@ h2 {
 
 header {
   width: 100%;
-  height: 50px;
+  height: 100px;
   display: flex;
 }
 
 .user-info {
-  width: 200px;
-  height: 50px;
   margin-left: auto;
 }
 
-.user-info.a {
+.user-info .a {
   width: 120px;
   padding: 5px;
   margin: 10px;
@@ -43,7 +41,7 @@ header {
   display:inline-block;
 }
 
-div.contents {
+div .contents {
   width: 100%;
   .formarea{
     width: 300px;
@@ -55,10 +53,15 @@ div.contents {
   }
 }
 
+.contents .post {
+  margin: 30px 0px;
+}
+
 .tweetcontents {
   width: 300px;
   display: flex;
   margin:0 auto;
+  padding: 5px;
   border: solid #d8d2c5;
   display: flex;
 }
