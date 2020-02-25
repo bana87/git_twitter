@@ -12,15 +12,20 @@
   <body>
     <%= render 'layouts/notifications' %>
     <header>
-      <h1>ついったー</h1>
+      <h1><a href="/">ついったー</a></h1>
       <div class="user-info">
         <% if user_signed_in? %>
           <p>ユーザー名：<%= current_user.nickname %></p>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-          </ul>
+          <div class="btn">
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          </div>
         <% else %>
-          <%= link_to '新規登録', new_user_registration_path, class: 'post' %>
-          <%= link_to 'ログイン', new_user_session_path, class: 'post' %>
+          <div class="btn">
+            <%= link_to '新規登録', new_user_registration_path, class: 'post' %>
+          </div>
+          <div class="btn">
+            <%= link_to 'ログイン', new_user_session_path, class: 'post' %>
+          </div>
         <% end %>
       </div>
     </header>
