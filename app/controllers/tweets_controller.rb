@@ -5,10 +5,6 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all.includes(:user).order("created_at DESC").page(params[:page]).per(10)
   end
   
-  def new
-    @tweet = Tweet.new #たぶんなくても良い
-  end
-  
   def create
     Tweet.create(text: tweet_params[:text], user_id: current_user.id)
   end
