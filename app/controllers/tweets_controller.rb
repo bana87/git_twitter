@@ -19,14 +19,13 @@ class TweetsController < ApplicationController
   def destroy
     tweet = Tweet.find(params[:id])
     if tweet.user_id == current_user.id
-      tweet.destroy
-    end
-    if tweet.destroy
-      flash[:notice] = 'ツイートが削除されました'
-      redirect_to action: 'index'
-    else
-      flash.now[:alert] = 'ツイートが削除できませんでした。もう一度削除してみましょう。'
-      render :index
+      if tweet.destroy
+        flash[:notice] = 'ツイートが削除されました'
+        redirect_to action: 'index'
+      else
+        flash.now[:alert] = 'ツイートが削除できませんでした。もう一度削除してみましょう。'
+        render :index
+      end
     end
   end
   
