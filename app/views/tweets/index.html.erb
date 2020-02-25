@@ -16,7 +16,7 @@
   <% @tweets.each do|tweet| %>
   <div class="tweetcontents">
     <div class="userimage">
-      <%= image_tag 'psyduck.jpeg', :size =>'80x80' %>
+      <img src=<%= tweet.user.image %> width="80" height="80" alt = "ユーザー写真" %>
     </div>
     <div class="tweet_text">
       <div class="tweet_header">
