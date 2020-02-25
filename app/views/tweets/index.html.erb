@@ -1,4 +1,14 @@
 <div class="contents">
+  <div class="post">
+    <%= form_tag('/tweets',method: :post) do %>
+      <div class="inputarea">
+        <input type="text" name="text" placeholder="つぶやきを入力しよう">
+      </div>
+      <div class="btn">
+        <input class="btn1" type="submit" value="投稿を送信★〃">
+      </div>
+    <% end %>
+  </div>
   <% @tweets.each do|tweet| %>
   <div class="tweetcontents">
     <div class="userimage">
