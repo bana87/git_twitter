@@ -11,7 +11,8 @@ class TweetsController < ApplicationController
       flash[:notice] = 'ツイートが完了したよ'
       redirect_to action: 'index'
     else
-      flash[:alert] = 'ツイートに失敗しました。もう一度ツイートしてみましょう。'
+      flash.now[:alert] = 'ツイートに失敗しました。もう一度ツイートしてみましょう。'
+      render :index
     end
   end
   
@@ -19,6 +20,13 @@ class TweetsController < ApplicationController
     tweet = Tweet.find(params[:id])
     if tweet.user_id == current_user.id
       tweet.destroy
+    end
+    if tweet.destroy
+      flash[:notice] = 'ツイートが削除されました'
+      redirect_to action: 'index'
+    else
+      flash.now[:alert] = 'ツイートが削除できませんでした。もう一度削除してみましょう。'
+      render :index
     end
   end
   
