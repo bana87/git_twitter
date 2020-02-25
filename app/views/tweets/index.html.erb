@@ -24,14 +24,14 @@
           <%= tweet.user.nickname %>
         </div>
         <% if user_signed_in? && current_user.id == tweet.user_id %>
-        <div class="arrow">
-          <label for="label1"><%= image_tag 'arrow.png' %></label>
-          <input type="checkbox" id="label1" class="check">
-          <div class="more">
-          <!--ここから隠す-->
+        <div class="delete">
+          <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+        <!--  <%= image_tag 'arrow.png' %>
+          <ul class="morelist">
+            <li>
             <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
-          <!--ここまで隠す-->
-          </div>
+            </li>
+          </ul> -->
         </div>
         <% end %>
       </div>
