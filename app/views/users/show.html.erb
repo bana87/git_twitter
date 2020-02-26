@@ -10,5 +10,6 @@
   
   <% if current_user.id == @user.id %>
     <p><%= @user.email %></p>
+    <%= link_to 'プロフィール編集', profile_edit_path %>
   <% end %>
 </div>

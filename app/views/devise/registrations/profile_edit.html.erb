@@ -1,0 +1,13 @@
+<div>
+  <%= form_for current_user, url: {action: 'profile_update'} do |f| %>
+ 
+  <div class="field">
+    <%= f.label :'ニックネーム' %><br />
+    <%= f.text_field :nickname %>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+</div>
