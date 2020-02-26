@@ -10,5 +10,6 @@
   
   <% if current_user.id == @user.id %>
     <p><%= @user.email %></p>
+    <%= link_to 'マイページを編集する', "/users/#{user.id}/edit", method: :get %>
   <% end %>
 </div>
