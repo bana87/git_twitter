@@ -17,7 +17,7 @@
     <div class="field">
       <%= f.label :'パスワード' %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %>字以上)</em>
+      <p>(<%= @minimum_password_length %>字以上)</p>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "new-password" %>
     </div>
