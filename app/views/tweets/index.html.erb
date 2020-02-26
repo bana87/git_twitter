@@ -16,7 +16,7 @@
   <% @tweets.each do|tweet| %>
   <div class="tweetcontents">
     <div class="userimage">
-      <img src=<%= tweet.user.image %> width="80" height="80" alt = "ユーザー写真" %>
+      <a href="/users/<%= tweet.user.id %>"><img src=<%= tweet.user.image %> width="80" height="80" alt = "ユーザー写真" %></a>
     </div>
     <div class="tweet_text">
       <div class="tweet_header">
