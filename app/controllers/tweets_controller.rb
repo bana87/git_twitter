@@ -6,13 +6,14 @@ class TweetsController < ApplicationController
   end
   
   def create
-    tweet = Tweet.create(text: tweet_params[:text], user_id: current_user.id)
+    tweet = Tweet.new(text: tweet_params[:text], user_id: current_user.id)
     if tweet.save
       flash[:notice] = 'ツイートが完了したよ'
       redirect_to action: 'index'
     else
-      flash.now[:alert] = 'ツイートに失敗しました。もう一度ツイートしてみましょう。'
-      render :index
+      flash[:alert] = 'ツイートに失敗しました。もう一度ツイートしてみましょう。'
+      @tweets = Tweet.all.includes(:user).order("created_at DESC").page(params[:page]).per(10)
+      render action: 'index'
     end
   end
   
