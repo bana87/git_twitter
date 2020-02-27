@@ -12,8 +12,7 @@ class TweetsController < ApplicationController
       redirect_to action: 'index'
     else
       flash[:alert] = 'ツイートに失敗しました。もう一度ツイートしてみましょう。'
-      @tweets = Tweet.all.includes(:user).order("created_at DESC").page(params[:page]).per(10)
-      render action: 'index'
+      redirect_to action: 'index'
     end
   end
   
