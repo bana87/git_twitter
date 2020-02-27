@@ -13,6 +13,7 @@
   <% else %>
     <p>新規登録／ログインするとツイートできるようになるよ！</p>
   <% end %>
+
   <% @tweets.each do|tweet| %>
   <div class="tweetcontents">
     <div class="userimage">
@@ -23,17 +24,13 @@
         <div class="username">
           <%= tweet.user.nickname %>
         </div>
+
         <% if user_signed_in? && current_user.id == tweet.user_id %>
         <div class="delete">
           <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
-        <!--  <%= image_tag 'arrow.png' %>
-          <ul class="morelist">
-            <li>
-            <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
-            </li>
-          </ul> -->
         </div>
         <% end %>
+
       </div>
       <p class="text">
         <%= tweet.text %>
@@ -41,4 +38,5 @@
     </div>
   </div>
   <% end %>
+  <%= paginate(@tweets) %>
 </div>
