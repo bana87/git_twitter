@@ -15,7 +15,7 @@
       <h1><a href="/">ついったー</a></h1>
       <div class="user-info">
         <% if user_signed_in? %>
-          <p class="user-name">ユーザー名：<%= current_user.nickname %></p>
+          <div class="user-name"><p>ユーザー名：<%= current_user.nickname %></p></div>
           <div class="btn">
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
           </div>
