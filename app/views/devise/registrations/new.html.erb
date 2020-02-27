@@ -11,14 +11,14 @@
   
     <div class="field">
       <%= f.label :'メールアドレス' %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", maxlength: "50" %>
     </div>
   
     <div class="field">
       <%= f.label :'パスワード' %>
       <% if @minimum_password_length %>
       <p>(<%= @minimum_password_length %>字以上)</p>
-      <% end %><br />
+      <% end %>
       <%= f.password_field :password, autocomplete: "new-password" %>
     </div>
   

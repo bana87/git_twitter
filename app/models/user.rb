@@ -6,7 +6,9 @@ class User < ApplicationRecord
   has_many :tweets
   validates :nickname,
     presence: true,
-    length: { maximum: 30 }
+    length: { maximum: 15 }
   validates :email,
     length: { maximum: 50 }
+  validates :image,
+    length: { maximum: 1000 }
 end
