@@ -23,8 +23,8 @@ class TweetsController < ApplicationController
         flash[:notice] = 'ツイートが削除されました'
         redirect_to action: 'index'
       else
-        flash.now[:alert] = 'ツイートが削除できませんでした。もう一度削除してみましょう。'
-        render :index
+        flash[:alert] = 'ツイートが削除できませんでした。もう一度削除してみましょう。'
+        redirect_to action: 'index'
       end
     end
   end
