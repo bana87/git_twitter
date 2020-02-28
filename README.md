@@ -1,24 +1,16 @@
-# README
+#このサービスは何？
+面倒くさがりやのためのミニマムなTwitterです
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#どうやって使うの？
+インストール方法は後日記載予定です
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#今後追加したい機能
+* ユーザーを削除したときの処理
+  * 現状はユーザー削除をUI上に出さないようにして対処しています
+* ユーザー情報更新の改善
+  * パスワードなしでの
+* ユーザー間の相互コミュニケーションを促進する機能
+  * いいね
+* ユーザー画像
+  * ユーザーの新規登録で画像を設定しなかった場合の表示の改善（デフォルトでデータベースに値をいれておきたい）
+  * URLではなく直接画像をアップ・表示できる仕組み
