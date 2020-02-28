@@ -8,6 +8,10 @@ a {
   text-decoration: none;
 }
 
+a:link, a:visited {
+  color: black;
+}
+
 h1, {
   font-size: 20px;
   margin:0 auto;
@@ -42,13 +46,12 @@ header {
     width: 100px;
     height: 25px;
     border: 1px solid #4575b4;
-    border-radius: 5px;
+    border-radius: 15px;
     margin: 5px;
     padding: 5px;
   }
   .btn:hover {
     background-color: #4575b4;
-    color: #fff;
   } 
   .btn a {
       display: block;
@@ -89,21 +92,21 @@ header {
   }
 }
 
-.contents .post {
+.post {
   width: 300px;
   margin:0 auto;
   margin-bottom: 30px;
-  border: solid #d8d2c5;
+  border: 1px #d8d2c5;
   padding: 5px;
 }
 
 .tweetcontents {
   width: 300px;
   display: flex;
-  margin:0 auto;
+  margin: 0 auto;
+  margin-bottom: 5px;
   padding: 5px;
-  border: solid #d8d2c5;
-  display: flex;
+  border: 1px solid #d8d2c5;
 }
 .userimage {
   margin: 5px;
@@ -128,36 +131,6 @@ header {
   width: 190px;
 }
 
-.arrow {
-  width: 20%;
-  margin: 0 10px;
-  padding: 0;
-}
-
-.arrow input {
-  display: none;
-}
-
-.arrow .more{
-  height: 0;
-  padding: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: 0.2s;
-  a {
-   font-size: 5px;
-   color: black;
-  }
-}
-
-.check:checked + .more{
-  height: auto;
-  padding: 1px;
-  background: #ffffff;
-  border: solid #d8d2c5 2px;
-  opacity: 1;
-}
-
 .btn {
 }
 
@@ -166,16 +139,6 @@ header {
   padding: 5px;
   margin: 10px;
   background-color: #26bfbf;
-  color: white;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.btn2 {
-  width: 100px;
-  padding: 5px;
-  margin: 10px;
-  background-color: #d8d2c5;
   color: white;
   border-radius: 4px;
   font-size: 14px;
