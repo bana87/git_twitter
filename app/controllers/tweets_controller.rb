@@ -3,6 +3,7 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.all.includes(:user).order("created_at DESC").page(params[:page]).per(10)
+    
   end
   
   def create
@@ -17,15 +18,23 @@ class TweetsController < ApplicationController
   end
   
   def destroy
-    tweet = Tweet.find(params[:id])
-    if tweet.user_id == current_user.id
-      if tweet.destroy
-        flash[:notice] = 'ツイートが削除されました'
-        redirect_to action: 'index'
+    begin
+      tweet = Tweet.find(params[:id])
+      if tweet.user_id == current_user.id
+        if tweet.destroy
+          flash[:notice] = 'ツイートが削除されました'
+          redirect_to action: 'index'
+        else
+          flash[:alert] = 'ツイートが削除できませんでした。もう一度削除してみましょう。'
+          redirect_to action: 'index'
+        end
       else
-        flash[:alert] = 'ツイートが削除できませんでした。もう一度削除してみましょう。'
+        flash[:alert] = 'ツイートが削除できませんでした。'
         redirect_to action: 'index'
       end
+    rescue ActiveRecord::RecordNotFound
+      flash[:alert] = '削除するツイートが見つかりませんでした'
+      redirect_to action: 'index'
     end
   end
   
