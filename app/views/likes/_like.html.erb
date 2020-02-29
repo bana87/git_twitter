@@ -1,0 +1,8 @@
+<div class="like_button_on">
+    <%= link_to "お気に入り済み", likes_delete_path(tweet_id: @tweet.id), {method: "post", remote: true} %>
+    <%= @like_count %>
+</div>
+<div class="like_button">
+    <%= link_to "お気に入り", likes_create_path(tweet_id: @tweet.id), {method: "post", remote: true} %>
+    <%= @like_count %>
+</div>
