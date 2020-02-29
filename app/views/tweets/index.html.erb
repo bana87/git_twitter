@@ -35,7 +35,8 @@
       <p class="text">
         <%= tweet.text %>
       </p>
-      <% @fav_count = Like.where(food_id: params[:food_id]).count %>
+      <% @fav_count = Like.where(tweet_id: params[:tweet_id]).count %>
+      <div class="btn2_<%= @tweet.id %>"><%= render partial: 'favorites/favorite' %></div>
     </div>
   </div>
   <% end %>
