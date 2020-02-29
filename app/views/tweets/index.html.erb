@@ -35,6 +35,7 @@
       <p class="text">
         <%= tweet.text %>
       </p>
+      <% @like_count = Like.where(food_id: params[:food_id]).count %>
     </div>
   </div>
   <% end %>
