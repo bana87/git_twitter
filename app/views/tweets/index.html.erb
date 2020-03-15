@@ -2,12 +2,8 @@
   <% if user_signed_in? %>
   <div class="post">
     <%= form_tag('/tweets',method: :post) do %>
-      <div class="inputarea">
-        <input type="text" name="text" placeholder="つぶやきを入力しよう">
-      </div>
-      <div class="btn">
-        <input class="btn1" type="submit" value="投稿を送信★〃">
-      </div>
+      <input type="text" name="text" placeholder="つぶやきを入力しよう">
+      <input class="btn1" type="submit" value="投稿を送信">
     <% end %>
   </div>
   <% else %>
@@ -16,9 +12,7 @@
 
   <% @tweets.each do|tweet| %>
   <div class="tweetcontents">
-    <div class="userimage">
-      <a href="/users/<%= tweet.user.id %>"><img src=<%= tweet.user.image %> width="80" height="80" alt = "ユーザー写真" %></a>
-    </div>
+    <a href="/users/<%= tweet.user.id %>"><img src=<%= tweet.user.image %> width="80" height="80" alt = "ユーザー写真" %></a>
     <div class="tweet_text">
       <div class="tweet_header">
         <div class="username">
@@ -34,9 +28,8 @@
       </div>
       <p class="text">
         <%= tweet.text %>
+        <%= render partial: 'tweets/tweets', collection: @tweets, as: :tweet %>
       </p>
-      <% @fav_count = Like.where(tweet_id: params[:tweet_id]).count %>
-      <div class="btn2_<%= @tweet.id %>"><%= render partial: 'favorites/favorite' %></div>
     </div>
   </div>
   <% end %>

@@ -1,157 +1,107 @@
 body, html {
   font-family: 'sans-serif','serif';
   background-color: white;
-  text-align: center;
 }
 
 a {
   text-decoration: none;
-}
-
-a:link, a:visited {
-  color: black;
-}
-
-h1, {
-  font-size: 20px;
-  margin:0 auto;
-}
-
-h2 {
-  font-size: 20px;
+  color: #333333;
 }
 
 header {
-  width: 100%;
-  height: 100px;
+  background-color: #009b8b;
+  height: 70px;
   display: flex;
-  a {
-    color:inherit;
-  }
-}
-
-.user-info {
-  margin-right: 20px;
-  width: 300px;
-  display: flex;
-  .user-name {
-    height: 25px;
-    margin: 5px;
-    padding: 5px;
-    p {
-      font-size: 12px;
+  h1 {
+    margin: auto auto auto 40px;
+    a {
+      color: white;
     }
   }
-  .btn {
-    width: 100px;
-    height: 25px;
-    border: 1px solid #4575b4;
-    border-radius: 15px;
-    margin: 5px;
-    padding: 5px;
-  }
-  .btn:hover {
-    background-color: #4575b4;
-  } 
-  .btn a {
-      display: block;
-      text-align: center;
-      line-height: 25px;
-      font-size: 15px;
-      color:inherit;
-  }
-  .btn a:hover {
-      color: #fff;
-  }
-}
-
-.link {
-  display:inline-block;
-}
-
-.contents {
-  width: 555px;
-  margin:0 auto;
-  .formarea {
-    width: 200px;
-    margin:0 auto;
-    .field {
-      width: 200px;
-      text-align: left;
-      margin-top: 10px;
-      input {
-       width: 200px;
-      }
-      label {
-        font-size: 12px;
-       }
-      p {
-        font-size: 12px;
+  ul {
+    display: flex;
+    list-style: none;
+    margin: auto 40px auto auto;
+    li {
+      margin: 0 10px;
+      color: white;
+      a {
+      color: white;
       }
     }
   }
 }
 
 .post {
-  width: 300px;
-  margin:0 auto;
-  margin-bottom: 30px;
-  border: 1px #d8d2c5;
-  padding: 5px;
+  width: 400px;
+  height: 100px;
+  margin: 10px auto;
+  padding: 10px;
+  box-shadow: 1px 1px 2px gray;
+  input {
+    display: block;
+    margin: 10px auto;
+  }
+  input[type="text"] {
+    width: 200px;
+    height: 40px;
+    }
+  input[type="submit"] {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #009b8b;
+    color: white;
+    }
 }
 
 .tweetcontents {
-  width: 300px;
-  display: flex;
-  margin: 0 auto;
-  margin-bottom: 5px;
-  padding: 5px;
-  border: 1px solid #d8d2c5;
-}
-.userimage {
-  margin: 5px;
-}
-
-.tweet_text{
-  text-align: left;
-  flex-wrap: wrap;
-}
-
-.tweet_header {
-  width: 190px;
-  display: flex;
-  margin: 10px 0;
-}
-
-.username {
-  width: 80%;
-}
-
-.tweet_text .text{
-  width: 190px;
-}
-
-.btn {
-}
-
-.btn1 {
-  width: 120px;
-  padding: 5px;
-  margin: 10px;
-  background-color: #26bfbf;
-  color: white;
-  border-radius: 4px;
-  font-size: 14px;
+  width: 400px;
+  min-height: 100px;
+  margin: 10px auto;
+  padding: 10px;
+  box-shadow: 1px 1px 2px gray;
+  a {
+    display: inline-block;
+    width: 80px;
+    margin: 10px;
+  }
+  .tweet_text {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    .tweet_header {
+      width: 270px;
+      height: 30px;
+      .username {
+        display: inline-block;
+        width: 170px;
+        height: 30px;
+      }
+      .delete {
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+        text-align: right;
+        a {
+          display: inline-block;
+          height: 30px;
+          margin: 0;
+        }
+      }
+    }
+    p {
+      display: inline-block;
+      width: 250px;
+    }
+  }
 }
 
-.inputarea {
-  width: 190px;
-  margin:0 auto;
+
+.fav_button{
+  background-color: #BDBDBD;
 }
 
-.inputarea input[type=text] {
-  display: block;
-  width: 150px;
-  padding: 5px;
-  margin: 10px;
+.fav_button_on{
+  background-color: #FE2E2E;
 }
