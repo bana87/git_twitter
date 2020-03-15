@@ -1,6 +1,7 @@
 class Tweet < ApplicationRecord
   belongs_to :user
-  has_many :favorites
+  has_many :likes, dependent: :destroy
+  has_many :liking_users, through: :likes, source: :user
   
   validates :text,
     presence: true,
