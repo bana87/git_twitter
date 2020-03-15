@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   post    '/tweets', to: 'tweets#create'
   delete  '/tweets/:id', to: 'tweets#destroy'
   get     'users/:id', to: 'users#show'
+  post   '/like/:tweet_id' => 'likes#like',   as: 'like'
+  delete '/like/:tweet_id' => 'likes#unlike', as: 'unlike'
 end
