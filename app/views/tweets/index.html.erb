@@ -28,8 +28,8 @@
       </div>
       <p class="text">
         <%= tweet.text %>
-        <%= render partial: 'tweets/tweets', collection: @tweets, as: :tweet %>
       </p>
+      <%= render partial: 'likes/like', locals:{tweet: tweet} %>
     </div>
   </div>
   <% end %>
