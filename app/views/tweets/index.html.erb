@@ -21,7 +21,7 @@
 
         <% if user_signed_in? && current_user.id == tweet.user_id %>
         <div class="delete">
-          <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+          <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete, data: {confirm: "削除しますか？"} %>
         </div>
         <% end %>
 
