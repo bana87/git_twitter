@@ -1,4 +1,15 @@
 <div class="contents">
+    <% if user_signed_in? %>
+  <div class="post">
+    <%= form_tag('/tweets/@tweet.id/comments/',method: :post) do %>
+      <input type="text" name="text" placeholder="コメントを入力しよう">
+      <input class="btn1" type="submit" value="投稿を送信">
+    <% end %>
+  </div>
+  <% else %>
+    <p>新規登録／ログインするとコメントできるようになるよ！</p>
+  <% end %>
+  
   <div class="tweetcontents">
     <a href="/users/<%= @tweet.user.id %>"><img src=<%= @tweet.user.image %> width="80" height="80" alt = "ユーザー写真" %></a>
     <div class="tweet_text">
@@ -18,4 +29,23 @@
       <%= render partial: 'likes/like', locals:{tweet: @tweet} %>
     </div>
   </div>
+
+  <div class="comments">
+    <% @comments.each do |comment| %>
+    <div class="commentcontents">
+    <a href="/users/<%= comment.user.id %>"><img src=<%= comment.user.image %> width="80" height="80" alt = "ユーザー写真" %></a>
+      <div class="comment_text">
+        <div class="comment_header">
+          <div class="username">
+            <%= comment.user.nickname %>
+          </div>
+        </div>
+        <p class="text">
+          <%= comment.text %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+
 </div>
