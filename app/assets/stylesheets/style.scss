@@ -35,7 +35,7 @@ header {
 .post {
   width: 400px;
   height: 100px;
-  margin: 10px auto;
+  margin: 25px auto;
   padding: 10px;
   box-shadow: 1px 1px 2px gray;
   input {
@@ -58,7 +58,7 @@ header {
 .tweetcontents {
   width: 400px;
   min-height: 100px;
-  margin: 10px auto;
+  margin: 10px auto 0px;
   padding: 10px;
   box-shadow: 1px 1px 2px gray;
   z-index: 1;
@@ -73,7 +73,7 @@ header {
     z-index: 2;
   }
   
-  a {
+  a.userimage {
     display: inline-block;
     width: 80px;
     margin: 10px;
@@ -120,4 +120,43 @@ header {
   padding: 0 18px;
   border-radius: 100px;
   font-weight: bold;
+}
+
+.comments {
+  .commentcontents{
+    width: 400px;
+    min-height: 100px;
+    margin: 0px auto;
+    padding: 10px;
+    box-shadow: 1px 1px 2px gray;
+    .comment_text {
+      display: inline-block;
+      vertical-align: top;
+      margin: 10px;
+      .comment_header {
+        width: 270px;
+        height: 30px;
+        .username {
+          display: inline-block;
+          width: 170px;
+          height: 30px;
+        }
+        .delete {
+          display: inline-block;
+          width: 50px;
+          height: 30px;
+          text-align: right;
+          a {
+            display: inline-block;
+            height: 30px;
+            margin: 0;
+          }
+        }
+      }
+      p {
+        display: inline-block;
+        width: 250px;
+      }
+    }
+  }
 }

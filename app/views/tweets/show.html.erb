@@ -1,7 +1,7 @@
 <div class="contents">
     <% if user_signed_in? %>
   <div class="post">
-    <%= form_tag('/tweets/@tweet.id/comments/',method: :post) do %>
+    <%= form_tag("/tweets/#{@tweet.id}/comments/",method: :post) do %>
       <input type="text" name="text" placeholder="コメントを入力しよう">
       <input class="btn1" type="submit" value="投稿を送信">
     <% end %>
@@ -11,7 +11,7 @@
   <% end %>
   
   <div class="tweetcontents">
-    <a href="/users/<%= @tweet.user.id %>"><img src=<%= @tweet.user.image %> width="80" height="80" alt = "ユーザー写真" %></a>
+    <a href="/users/<%= @tweet.user.id %>" class="userimage"><img src=<%= @tweet.user.image %> width="80" height="80" alt = "ユーザー写真" %></a>
     <div class="tweet_text">
       <div class="tweet_header">
         <div class="username">
