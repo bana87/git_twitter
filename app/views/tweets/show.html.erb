@@ -1,0 +1,21 @@
+<div class="contents">
+  <div class="tweetcontents">
+    <a href="/users/<%= @tweet.user.id %>"><img src=<%= @tweet.user.image %> width="80" height="80" alt = "ユーザー写真" %></a>
+    <div class="tweet_text">
+      <div class="tweet_header">
+        <div class="username">
+          <%= @tweet.user.nickname %>
+        </div>
+        <% if user_signed_in? && current_user.id == @tweet.user_id %>
+        <div class="delete">
+          <%= link_to '削除', "/tweets/#{@tweet.id}", method: :delete, data: {confirm: "削除しますか？"} %>
+        </div>
+        <% end %>
+      </div>
+      <p class="text">
+        <%= @tweet.text %>
+      </p>
+      <%= render partial: 'likes/like', locals:{tweet: @tweet} %>
+    </div>
+  </div>
+</div>
